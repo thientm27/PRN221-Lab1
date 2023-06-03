@@ -37,8 +37,8 @@
                              Height="25" Text="{Binding Path=Price,StringFormat={}{0:N3}, Mode=OneWay}"
                              DataContext="{Binding ElementName=lvCars, Path=SelectedItem}" />
                     <Label Name="lbReleasedYear" Content="ReleasedYear" />
-                    <TextBox Name="txtReleasedYear" HorizontalAlignment="Stretch" Height="25"
-                             Text="{Binding Path=ReleasedYear, Mode=OneWay}"
+                    <TextBox Name="txtReleaseYear" HorizontalAlignment="Stretch" Height="25"
+                             Text="{Binding Path=ReleaseYear, Mode=OneWay}"
                              DataContext="{Binding ElementName=lvCars, Path=SelectedItem}" />
                 </StackPanel>
 
@@ -53,7 +53,7 @@
                             Click="btnDelete_Click" />
                 </StackPanel>
 
-                <ListView Grid.Row="2" Name="lvCars" Width="Auto" Height="Auto">
+                <ListView Grid.Row="2" Name="lvCars" Width="Auto" Height="500">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Car ID" Width="100"
@@ -66,7 +66,7 @@
                                             DisplayMemberBinding="{Binding Path=Price,
                                             StringFormat={}{0:N3}}" />
                             <GridViewColumn Header="ReleasedYear" Width="100"
-                                            DisplayMemberBinding="{Binding Path=ReleasedYear}" />
+                                            DisplayMemberBinding="{Binding Path=ReleaseYear}" />
                         </GridView>
                     </ListView.View>
                 </ListView>

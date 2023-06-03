@@ -6,36 +6,35 @@ namespace Repository.Implemetation
 {
     public class CarRepository : ICarRepository
     {
-        private readonly CarDAO _carDao;
-
-        public CarRepository(CarDAO carDao)
-        {
-            _carDao = carDao;
-        }
 
         public void CreateCar(Car car)
         {
-            _carDao.CreateCar(car);
+            CarDAO.Instance.CreateCar(car);
         }
 
         public void UpdateCar(Car car)
         {
-            _carDao.UpdateCar(car);
+            CarDAO.Instance.UpdateCar(car);
         }
 
         public void DeleteCar(int carId)
         {
-            _carDao.DeleteCar(carId);
+            CarDAO.Instance.DeleteCar(carId);
+        }
+
+        public List<Car> GetAllCar()
+        {
+            return CarDAO.Instance.GetAllCar();
         }
 
         public Car GetCarById(int carId)
         {
-            return _carDao.GetCarById(carId);
+            return CarDAO.Instance.GetCarById(carId);
         }
 
         public List<Car> SearchCars(string searchTerm)
         {
-            return _carDao.SearchCars(searchTerm);
+            return CarDAO.Instance.SearchCars(searchTerm);
         }
     }
 }

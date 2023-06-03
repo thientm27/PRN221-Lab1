@@ -6,31 +6,29 @@ namespace DataAccessObject
 {
     public class CarDAO
     {
-        private static CarDAO _instance;
-        private static readonly object _lock = new object();
+        private static CarDAO instance = null;
+        private static object instanceLook = new object();
 
-        private readonly MyStockContext _context;
-
-        private CarDAO(MyStockContext context)
+        public static CarDAO Instance
         {
-            _context = context;
-        }
-
-        public static CarDAO Instance(MyStockContext context)
-        {
-            if (_instance == null)
+            get
             {
-                lock (_lock)
+                lock (instanceLook)
                 {
-                    if (_instance == null)
+                    if (instance == null)
                     {
-                        _instance = new CarDAO(context);
+                        instance = new CarDAO();
                     }
+                    return instance;
                 }
             }
-            return _instance;
         }
 
+        readonly MyStockContext _context = new MyStockContext();
+        public List<Car> GetAllCar()
+        {
+            return _context.Cars.ToList();
+        }
         public void CreateCar(Car car)
         {
             _context.Cars.Add(car);
