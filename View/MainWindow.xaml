@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="800"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <DockPanel VerticalAlignment="Top" Margin="10">
             <Grid>
@@ -53,7 +54,7 @@
                             Click="btnDelete_Click" />
                 </StackPanel>
 
-                <ListView Grid.Row="2" Name="lvCars" Width="Auto" Height="500">
+                <ListView Grid.Row="2" Name="lvCars" Width="Auto" Height="Auto">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Car ID" Width="100"

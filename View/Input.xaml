@@ -1,0 +1,29 @@
+﻿<Window x:Class="View.Input"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="Input" Height="450" Width="400"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Background="LightBlue" Orientation="Vertical" HorizontalAlignment="Left" Width="400">
+            <Label Name="lbTitle" Foreground="Red" FontWeight="DemiBold" FontSize="20"
+                   Content="Car Information" />
+            <Label Name="lbCarName" Content="Car Name" />
+            <TextBox Name="txtCarName" HorizontalAlignment="Stretch" Height="25" />
+            <Label Name="lbManufacturer" Content="Manufacturer" />
+            <TextBox Name="txtManufacturer" HorizontalAlignment="Stretch" Height="25" />
+            <Label Name="lbPrice" Content="Price" />
+            <TextBox Name="txtPrice" HorizontalAlignment="Stretch"
+                     Height="25" />
+            <Label Name="lbReleasedYear" Content="ReleasedYear" />
+            <TextBox Name="txtReleaseYear" HorizontalAlignment="Stretch" Height="25" />
+            <Button Width="100" Margin="0,20,0,0" Click="btnInsert_Click">
+                SUBMIT
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

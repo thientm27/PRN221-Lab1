@@ -31,6 +31,9 @@ namespace DataAccessObject
         }
         public void CreateCar(Car car)
         {
+            var maxId = _context.Cars.Max(c => c.CarId);
+            car.CarId = maxId + 1;
+
             _context.Cars.Add(car);
             _context.SaveChanges();
         }
